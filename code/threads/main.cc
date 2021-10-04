@@ -132,6 +132,12 @@ main (int argc, char **argv)
 		      argCount = 3;
 		  }
 	    }
+		#ifdef CHANGED
+	  else if (!strcmp (*argv, "-sc"))
+	    {			// performance test
+		ConsoleDriverTest (NULL,NULL);
+	    }
+		#endif CHANGED
 #endif // USER_PROGRAM
 #ifdef FILESYS
 	  if (!strcmp (*argv, "-cp"))
@@ -164,12 +170,8 @@ main (int argc, char **argv)
 	    {			// performance test
 		PerformanceTest ();
 	    }
-		#ifdef CHANGED
-	  else if (!strcmp (*argv, "-sc"))
-	    {			// performance test
-		ConsoleDriverTest ();
-	    }
-		#endif CHANGED
+		
+	  
 #endif // FILESYS
 #ifdef NETWORK
 	  if (!strcmp (*argv, "-o"))
